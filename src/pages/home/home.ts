@@ -1,3 +1,4 @@
+import { MarvelServiceProvider } from './../../providers/marvel-service/marvel-service';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
@@ -7,8 +8,20 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  historias: any[] = [];
 
+  constructor(public navCtrl: NavController, public MarvelServiceProvider:MarvelServiceProvider) {
+
+  }
+
+  ionViewDidLoad(){
+   this.MarvelServiceProvider.getHistory()
+   .then(data=>{
+     this.historias=data.results;
+   })
+   .catch(error=>{
+     console.error(error);
+   })
   }
 
 }
