@@ -14,14 +14,19 @@ export class HomePage {
 
   }
 
-  ionViewDidLoad(){
-   this.MarvelServiceProvider.getHistory()
-   .then(data=>{
-     this.historias=data.results;
-   })
-   .catch(error=>{
-     console.error(error);
-   })
+  ionViewWillEnter(){
+    this.MarvelServiceProvider.getHistory()
+    .then(data=>{
+      this.historias=data.results;
+    })
+    .catch(error=>{
+      console.error(error);
+    })
   }
+
+
+    
+
+
 
 }
