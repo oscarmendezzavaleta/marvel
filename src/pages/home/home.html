@@ -6,10 +6,19 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
- 
-  <ion-list>
-      <h2>{{ historias.id }}</h2>
-    
-  </ion-list>
+<ion-content >
+
+  <ion-card *ngFor="let item of historias">
+    <ion-item>
+      <h2>{{item.title}}</h2>
+      <p>{{item.format}}</p>
+    </ion-item>
+    <ion-row>
+      <ion-col  text-right>
+        <ion-note>
+          {{item.modified}}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  </ion-card>
 </ion-content>

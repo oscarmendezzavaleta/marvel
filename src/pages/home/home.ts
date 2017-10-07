@@ -17,7 +17,8 @@ export class HomePage {
   ionViewWillEnter(){
     this.MarvelServiceProvider.getHistory()
     .then(data=>{
-      this.historias=data.results;
+      this.historias=data.data.results;
+      console.log(this.historias);
     })
     .catch(error=>{
       console.error(error);
