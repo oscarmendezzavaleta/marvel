@@ -10,20 +10,14 @@ export class HomePage {
 
   historias: any[] = [];
 
-  constructor(public navCtrl: NavController, public MarvelServiceProvider:MarvelServiceProvider ,public angular:Component) {
-
+  constructor(public navCtrl: NavController, public MarvelServiceProvider:MarvelServiceProvider ) {
+    //https://github.com/dreamhouseapp/dreamhouse-mobile-ionic/tree/6bda147afa57cc3e010251ec63b910be4037b5e2
   }
 
   ionViewWillEnter(){
     this.MarvelServiceProvider.getComics()
     .then(data=>{
       this.historias=data.data.results;
-      var log = [];
-      
-      angular.forEach(this.historias, function(value, key) {
-        this.push(key + ': ' + value);
-      }, log);
-      
     })
     .catch(error=>{
       console.error(error);
