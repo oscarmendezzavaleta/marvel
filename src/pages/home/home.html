@@ -9,16 +9,16 @@
 
 <ion-content >
 
-  <ion-card *ngFor="let item of historias">
+  <ion-card *ngFor="let item of historias" (click)="viewDetail(item.stories)">
     <ion-item>
       <h2>{{item.title}}</h2>
-      <p>{{item.format}}</p>            
-      <img src='{{item.thumbnail.path}}.{{item.thumbnail.extension}}'/>
+      <p>{{item.type}}</p>            
+      <img src='{{item.imgen}}'/>
     </ion-item>
     <ion-row>
       <ion-col  text-right>
         <ion-note>
-          {{item.modified}}
+          {{item.fecha}}
         </ion-note>
       </ion-col>
     </ion-row>

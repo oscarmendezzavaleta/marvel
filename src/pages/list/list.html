@@ -3,11 +3,17 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List 1</ion-title>
+    <ion-title>Detail</ion-title>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
+  
+  <ion-list >
+    <ion-item *ngFor="let item of stories" >
+      {{item.name}}
+    </ion-item>
+  </ion-list>
 
 </ion-content>

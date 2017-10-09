@@ -14,12 +14,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'list.html',
 })
 export class ListPage {
-
+  params:any = [];
+  stories = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListPage');
+    this.params = this.navParams.get("stories");
+    this.stories = this.params.items;
+    console.log(this.stories)
   }
 
 }
