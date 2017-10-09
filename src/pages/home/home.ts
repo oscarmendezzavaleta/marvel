@@ -10,15 +10,20 @@ export class HomePage {
 
   historias: any[] = [];
 
-  constructor(public navCtrl: NavController, public MarvelServiceProvider:MarvelServiceProvider) {
+  constructor(public navCtrl: NavController, public MarvelServiceProvider:MarvelServiceProvider ,public angular:Component) {
 
   }
 
   ionViewWillEnter(){
-    this.MarvelServiceProvider.getHistory()
+    this.MarvelServiceProvider.getComics()
     .then(data=>{
       this.historias=data.data.results;
-      console.log(this.historias);
+      var log = [];
+      
+      angular.forEach(this.historias, function(value, key) {
+        this.push(key + ': ' + value);
+      }, log);
+      
     })
     .catch(error=>{
       console.error(error);

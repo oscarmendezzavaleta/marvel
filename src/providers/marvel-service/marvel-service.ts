@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http  } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+import {Md5} from 'ts-md5/dist/md5';
+
 
 /*
   Generated class for the MarvelServiceProvider provider.
@@ -11,14 +13,29 @@ import 'rxjs/add/operator/toPromise';
 */
 @Injectable()
 export class MarvelServiceProvider {
-  URLCOMICS = "https://gateway.marvel.com:443/v1/public/comics?apikey=d7fc5b7e9e14e4abf0e81a04dfc18e9d&hash=b64df3dbffec30b5a2fb7b15511af172&ts=1";
-  URLSTORIRES = "https://gateway.marvel.com:443/v1/public/comics/apikey=d7fc5b7e9e14e4abf0e81a04dfc18e9d&hash=b64df3dbffec30b5a2fb7b15511af172&ts=1";
-  constructor(public http: Http) {
+  
+  baseUrl = 'https://gateway.marvel.com:443/v1/'
+  comicsUrl = "public/comics"
+  publicKey = "610a27f6742ec655e90c26f978e878f5"
+  privateKey = "e3238a6515e0b4656c260f7d8ed0fccce7f192f7"
+  timeStamp = Date.now()
+  hash = Md5.hashStr(this.timeStamp+this.privateKey+this.publicKey)   
+  
+  
+
+  
+  
+  
+  constructor(public http: Http ) {
     console.log('Hello MarvelServiceProvider Provider');
   }
 
-  getHistory(){
-    return this.http.get(this.URLCOMICS)
+  
+  getComics(){  
+    
+    return this.http.get(this.baseUrl+this.comicsUrl ,{
+params:{ts: this.timeStamp, apikey: this.publicKey, hash: this.hash}
+    } )
     .map(res=>res.json())
     .toPromise();   
   }

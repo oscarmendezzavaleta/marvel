@@ -1,8 +1,9 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home 1</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -11,7 +12,8 @@
   <ion-card *ngFor="let item of historias">
     <ion-item>
       <h2>{{item.title}}</h2>
-      <p>{{item.format}}</p>
+      <p>{{item.format}}</p>            
+      <img src='{{item.thumbnail.path}}.{{item.thumbnail.extension}}'/>
     </ion-item>
     <ion-row>
       <ion-col  text-right>

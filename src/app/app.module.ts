@@ -1,3 +1,4 @@
+import { ListPage } from './../pages/list/list';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -12,7 +13,8 @@ import { MarvelServiceProvider } from '../providers/marvel-service/marvel-servic
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    ListPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +24,8 @@ import { MarvelServiceProvider } from '../providers/marvel-service/marvel-servic
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    ListPage
   ],
   providers: [
     StatusBar,
