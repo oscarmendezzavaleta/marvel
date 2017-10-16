@@ -1,5 +1,6 @@
+import { Comic } from './../../app/model/comis';
 import { ListPage } from './../list/list';
-import { Comic } from './home';
+
 import { MarvelServiceProvider } from './../../providers/marvel-service/marvel-service';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
@@ -12,6 +13,7 @@ export class HomePage {
 
   historias: any[] = [];
   comic: Comic;
+  
   constructor(public navCtrl: NavController, public MarvelServiceProvider: MarvelServiceProvider) {
     //https://github.com/dreamhouseapp/dreamhouse-mobile-ionic/tree/6bda147afa57cc3e010251ec63b910be4037b5e2
   }
@@ -46,10 +48,3 @@ export class HomePage {
 
 }
 
-export class Comic {
-  title: string
-  type: string
-  imgen: string
-  fecha: string
-  stories: any
-}
