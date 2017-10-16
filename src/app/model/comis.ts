@@ -5,3 +5,5 @@ export class Comic {
     fecha: string
     stories: any
   }
+  //fasfasfasd
+  
