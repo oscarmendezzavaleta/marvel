@@ -1,4 +1,4 @@
-import { Comic } from './../../app/model/comis';
+import { Comic } from './../../model/comis';
 import { ListPage } from './../list/list';
 
 import { MarvelServiceProvider } from './../../providers/marvel-service/marvel-service';
