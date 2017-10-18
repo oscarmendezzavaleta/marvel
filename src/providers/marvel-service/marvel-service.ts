@@ -38,6 +38,7 @@ params:{ts: this.timeStamp, apikey: this.publicKey, hash: this.hash}
     } )
     .map(res=>res.json())
     .toPromise();   
+    console.log('s');
   }
 
 

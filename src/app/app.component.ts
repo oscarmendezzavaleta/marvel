@@ -1,3 +1,4 @@
+import { EmpleosPage } from './../pages/empleos/empleos';
 import { ListPage } from './../pages/list/list';
 import { Component, ViewChild } from '@angular/core';
 import { Platform ,Nav} from 'ionic-angular';
@@ -24,7 +25,9 @@ export class MyApp {
 
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'List', component: ListPage },
+      { title: 'empleos', component: EmpleosPage }
+
     ];
 
   }
