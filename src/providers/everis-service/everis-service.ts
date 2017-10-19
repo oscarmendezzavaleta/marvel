@@ -11,8 +11,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class EverisServiceProvider {
 
-  baseUrl:'https://everis.csod.com/Services/api/public/ATS/CareerSite/1/jobRequisitions?corp=everis&keyword=&page=1&pageSize=1000'
-  servicename :'jobRequisitions'
+  baseUrl: string; 
+  servicename: 'jobRequisitions'
 
 
   constructor(public http: Http) {
@@ -20,10 +20,11 @@ export class EverisServiceProvider {
   }
 
   getempleos() {
-    
-return this.http.get(this.baseUrl)
-.map(res=>res.json())
-.toPromise(); 
+    this.baseUrl = 'https://everis.csod.com/Services/api/public/ATS/CareerSite/1/jobRequisitions?corp=everis&keyword=&page=1&pageSize=1000';
+
+    return this.http.get(this.baseUrl)
+      .map(res =>
+        res.json()).toPromise();
 
   }
 
