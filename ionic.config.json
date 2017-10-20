@@ -6,7 +6,7 @@
     "cordova": {},
     "proxies": [{
       "path": "/goto",
-      "proxyUrl": "https://everis.csod.com"
+      "proxyUrl": "https://everis.csod.com/Services/api//public/ATS/CareerSite/1/jobRequisitions"
   }]
   }  
 }
